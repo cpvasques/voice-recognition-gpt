@@ -1,0 +1,181 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.container {
+  background-image: url(../assets/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 30%;
+  height: 30%;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+
+  position: relative;
+}
+
+.card-variant {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: auto;
+  max-width: 90%;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+
+  position: relative;
+  margin-top: 20px;
+  padding: 15px;
+
+  /* Adicionamos uma transição suave para a propriedade height */
+  transition: height 0.5s ease;
+}
+
+.btn {
+  background: linear-gradient(to bottom, #7f00ff, #b98eff);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  height: 100px;
+  padding: 0;
+  transition: all 0.3s ease;
+  width: 100px;
+  box-shadow: 0 0 0 rgba(75, 0, 130, 0.7);
+  outline: none;
+}
+
+.btn:hover {
+  background-image: radial-gradient(circle at 10% 10%, #9f00ff, #3a0080),
+    radial-gradient(circle at 90% 10%, #9f00ff, #3a0080),
+    radial-gradient(circle at 10% 90%, #9f00ff, #3a0080),
+    radial-gradient(circle at 90% 90%, #9f00ff, #3a0080);
+  background-position: top left, top right, bottom left, bottom right;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease;
+  transform: scale(1.05);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn:active {
+  box-shadow: 0 0 0 5px rgba(75, 0, 130, 0.7);
+  background: #4b0082;
+  transition: box-shadow 0.3s ease;
+}
+
+.loading-container {
+  display: none;
+  position: absolute;
+  bottom: -50px;
+}
+
+.loading-container__mic {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.loading-container__mic--waves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.loading-container__mic--wave {
+  flex: 1;
+  height: 0;
+  margin: 0 2px;
+  border-radius: 10px;
+  background-color: #ccc;
+  opacity: 0.5;
+  animation: animacao-onda 2s ease-out infinite;
+  animation-delay: var(--anim-delay);
+}
+
+@keyframes animacao-onda {
+  0% {
+    height: 0;
+    opacity: 0.5;
+    transform: scaleY(0);
+  }
+  20% {
+    height: 20px;
+    opacity: 0.7;
+    transform: scaleY(0.7);
+  }
+  40% {
+    height: 40px;
+    opacity: 0.8;
+    transform: scaleY(1.1);
+  }
+  60% {
+    height: 20px;
+    opacity: 0.7;
+    transform: scaleY(0.7);
+  }
+  100% {
+    height: 0;
+    opacity: 0.5;
+    transform: scaleY(0);
+  }
+}
+
+.typewriter {
+  font-size: 1.2em;
+  white-space: pre-wrap;
+}
+
+.typewriter span {
+  display: inline-block;
+  opacity: 0;
+  animation: animacao-digitar 1s ease forwards;
+}
+
+@keyframes animacao-digitar {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

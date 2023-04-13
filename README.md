@@ -23,4 +23,4 @@
   npm run dev
 ```
 
-Abra o servidor em: `http://locahost:3000
+Abra o servidor em: http://locahost:3000
