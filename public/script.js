@@ -70,7 +70,10 @@ function writeResponseOnCard(response) {
   const responseElement = document.getElementById("response");
   cardElement.style.display = "flex";
 
-  /* Para criar a animação de digitação, envolvemos o conteúdo do elemento com uma nova div que possui a classe 'typewriter' e definimos o conteúdo como uma string vazia. Em seguida, adicionamos o texto da resposta letra por letra, com um pequeno atraso entre cada letra. */
+  /* Para criar a animação de digitação, envolvemos o conteúdo do elemento com uma nova div
+  que possui a classe 'typewriter' e definimos o conteúdo como uma string vazia. Em seguida,
+  adicionamos o texto da resposta letra por letra, com um pequeno atraso entre cada letra. */
+
   let html = "";
 
   for (let i = 0; i < response.length; i++) {
