@@ -1,5 +1,6 @@
 const btn = document.getElementById("btn");
 const loader = document.getElementById("loader");
+const cardElement = document.querySelector(".card-variant");
 
 let pressed = false;
 let holdingBtn;
@@ -26,6 +27,7 @@ btn.addEventListener("mouseup", () => {
 });
 
 function getMicText() {
+  cardElement.style.display = "none";
   recognition = new window.webkitSpeechRecognition();
   recognition.lang = "pt-BR";
 
@@ -66,6 +68,7 @@ async function sendTextToServer(text) {
 
 function writeResponseOnCard(response) {
   const responseElement = document.getElementById("response");
+  cardElement.style.display = "flex";
 
   /* Para criar a animação de digitação, envolvemos o conteúdo do elemento com uma nova div que possui a classe 'typewriter' e definimos o conteúdo como uma string vazia. Em seguida, adicionamos o texto da resposta letra por letra, com um pequeno atraso entre cada letra. */
   let html = "";
@@ -78,8 +81,6 @@ function writeResponseOnCard(response) {
   }
 
   responseElement.innerHTML = `<div class="typewriter">${html}</div>`;
-
-  const cardElement = document.querySelector(".card-variant");
 
   // Ajusta a altura do card de acordo com o tamanho do texto
   const height = responseElement.offsetHeight;

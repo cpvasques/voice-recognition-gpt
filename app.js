@@ -4,7 +4,7 @@ const port = 3000;
 
 require("dotenv").config();
 
-const chatRouter = require("./routes/chat");
+const chatRouter = require("./src/routes/chat");
 
 app.use(express.static("public"));
 app.use(express.json());
